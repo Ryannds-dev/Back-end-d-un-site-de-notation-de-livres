@@ -1,11 +1,12 @@
 const express = require("express");
 const auth = require("../middleware/auth");
 const router = express.Router();
+const multer = require("../middleware/multer-config");
 
 const bookController = require("../controllers/bookController");
 
 //CREATE - Créer un livre
-router.post("/", auth, bookController.createBook);
+router.post("/", auth, multer, bookController.createBook);
 
 // READ - Récupérer tous les livres
 router.get("/", bookController.getAllBooks);
@@ -14,7 +15,7 @@ router.get("/", bookController.getAllBooks);
 router.get("/:id", bookController.getOneBook);
 
 // UPDATE - modifier un livre
-router.put("/:id", auth, bookController.modifyBook);
+router.put("/:id", auth, multer, bookController.modifyBook);
 
 // DELETE - supprimer un livre
 router.delete("/:id", auth, bookController.deleteBook);
