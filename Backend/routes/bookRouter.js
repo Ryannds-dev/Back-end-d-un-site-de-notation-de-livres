@@ -20,4 +20,10 @@ router.put("/:id", auth, multer, bookController.modifyBook);
 // DELETE - supprimer un livre
 router.delete("/:id", auth, bookController.deleteBook);
 
+// ------------------------------ NOTATION DU LIVRE ------------------------------
+
+//CREATE - Ajouter une note
+
+router.post("/:id/rating", auth, bookController.rateBook);
+
 module.exports = router;

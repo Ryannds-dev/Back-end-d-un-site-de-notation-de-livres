@@ -91,3 +91,44 @@ exports.getAllBooks = (req, res) => {
     .then((books) => res.status(200).json(books))
     .catch((error) => res.status(400).json({ error }));
 };
+
+// ------------------------------ NOTATION DU LIVRE ------------------------------
+
+//CREATE - Ajouter une note
+
+exports.rateBook = (req, res) => {
+  const userId = req.auth.userId;
+  const grade = req.body.rating;
+
+  Book.findOne({ _id: req.params.id })
+    .then((book) => {
+      if (!book) {
+        return res
+          .status(404)
+          .json({ message: "Le livre recherché n'existe pas" });
+      }
+
+      // empêcher une double notation (en trichant pour passer le frontend)
+      const alreadyRated = book.ratings.find(
+        (rating) => rating.userId === userId
+      );
+
+      if (alreadyRated) {
+        return res
+          .status(400)
+          .json({ message: "Vous avez déjà noté ce livre !" });
+      }
+
+      // ajouter la note
+      book.ratings.push({ userId, grade });
+
+      return book.save();
+    })
+    .then((updatedBook) => {
+      // suite du cas où c'était un already rated
+      if (!updatedBook) return;
+      // suite normale
+      res.status(200).json(updatedBook);
+    })
+    .catch((error) => res.status(500).json({ error }));
+};
