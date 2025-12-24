@@ -140,3 +140,13 @@ exports.rateBook = (req, res) => {
     })
     .catch((error) => res.status(500).json({ error }));
 };
+
+// READ - Récupérer les 3 livres les mieux notés
+
+exports.getBestRatedBooks = (req, res) => {
+  Book.find()
+    .sort({ averageRating: -1 }) // du plus grand au plus petit
+    .limit(3) // seulement 3 livres
+    .then((books) => res.status(200).json(books))
+    .catch((error) => res.status(400).json({ error }));
+};

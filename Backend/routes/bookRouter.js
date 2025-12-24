@@ -11,6 +11,9 @@ router.post("/", auth, multer, bookController.createBook);
 // READ - Récupérer tous les livres
 router.get("/", bookController.getAllBooks);
 
+// READ - Récupérer les 3 livres les mieux notés ATTENTION BIEN AVANT LA ROUTE GET :ID
+router.get("/bestrating", bookController.getBestRatedBooks);
+
 // READ - Récupérer un livre par id
 router.get("/:id", bookController.getOneBook);
 
