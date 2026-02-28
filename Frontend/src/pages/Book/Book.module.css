@@ -2,49 +2,50 @@
     padding-block: 5em;
     display: flex;
     align-items: stretch;
-
 }
 .BookContainer {
     background-color: #FFFFFF;
     margin: auto;
-    border-radius: 7px;
-    box-shadow:  0 4px 34px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    box-shadow: 0 4px 34px rgba(26, 10, 60, 0.25);
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .BookContainer hr {
     width: 60%;
     border-color: transparent;
-    background-color: #F2E3CE;
+    background-color: #EDE0FF;
     height: 1px;
 }
 .Deleted {
-    font-family: "Libre Baskerville", serif;
+    font-family: "Fredoka One", cursive;
     padding-block: 5em;
     background-color: #FFFFFF;
     margin: auto;
-    border-radius: 7px;
-    box-shadow:  0 4px 34px rgba(0, 0, 0, 0.07);
+    border-radius: 12px;
+    box-shadow: 0 4px 34px rgba(26, 10, 60, 0.25);
     box-sizing: border-box;
     display: flex;
     align-items: center;
     flex-direction: column;
-
 }
 
 .Deleted h1 {
-
     font-size: 44px;
-    font-style: italic;
-    color: #796157;
+    color: #5B2D8E;
     padding-bottom: 15px;
 }
 .Deleted p {
+    font-family: 'Nunito', sans-serif;
     font-size: 16px;
     margin-bottom: 20px;
+    color: #1A0A3C;
 }
 
 .Deleted img {
+    width: 300px;
+    height: auto;
     margin-bottom: 75px;
 }
 .BookImage {
@@ -78,7 +79,7 @@
     gap: 1px;
 }
 .BookInfo > * {
-    outline: 1px solid #000;
+    outline: 1px solid #C8A8E0;
     display: flex;
     align-items: center;
 }
@@ -87,16 +88,23 @@
     grid-column-end: 4;
     font-size: 28px;
     padding-left: 20px;
+    font-family: "Fredoka One", cursive;
+    color: #5B2D8E;
 }
 
 .Author {
     grid-column-start: 1;
     grid-column-end: 3;
     padding-left: 20px;
+    font-family: 'Nunito', sans-serif;
+    color: #1A0A3C;
+    font-weight: 600;
 }
 
 .PublishDate, .Genre, .Rating {
     justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    color: #1A0A3C;
 }
 
 .Rating {
@@ -110,40 +118,53 @@
 .Book form {
     position: relative;
     overflow: hidden;
-    background-color: #F9F3EE;
+    background-color: #EDE0FF;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-block: 32px;
     margin-top: 50px;
-    max-width: 465px
+    max-width: 465px;
+    border-radius: 10px;
 }
 
 .Book form p {
-    font-family: "Libre Baskerville", serif;
-    font-size: 18px;
+    font-family: "Fredoka One", cursive;
+    font-size: 20px;
     margin-bottom: 22px;
+    color: #1A0A3C;
 }
 
 .Book form input[type="radio"] {
     position: absolute;
-    left: -10000px
+    left: -10000px;
 }
 .Book form input[type="submit"] {
     padding: 20px 23px;
     border: none;
-    background-color: #D9A963;
-    font-family: 'DM Sans', sans-serif;
+    background-color: #FFD700;
+    color: #1A0A3C;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
     font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
-.Stars, .Stars label{
+
+.Book form input[type="submit"]:hover {
+    background-color: #C8A800;
+}
+
+.Stars, .Stars label {
     display: flex;
     margin-bottom: 22px;
 }
 .Owner {
-    color: #2C1810;
-    font-family: "DM Sans", sans-serif;
+    color: #1A0A3C;
+    font-family: "Nunito", sans-serif;
     padding: 20px;
+    font-weight: 600;
 }
 
 .Owner p {
@@ -151,8 +172,9 @@
 }
 
 .Owner a {
-    color: #929292;
+    color: #5B2D8E;
     margin-right: 20px;
+    font-weight: 700;
 }
 
 .Owner span {
@@ -177,7 +199,6 @@
         align-items: center;
         margin-top: 2em;
     }
-
 }
 
 @media all and (max-width: 600px) {
@@ -185,4 +206,41 @@
         width: 90%;
     }
 
+    .BookInfo {
+        grid-template-rows: auto auto auto;
+    }
+
+    .BookInfo h1 {
+        font-size: 22px;
+        padding-block: 12px;
+    }
+
+    .Author, .PublishDate, .Genre, .Rating {
+        padding-block: 10px;
+        font-size: 14px;
+    }
+
+    .Deleted img {
+        width: 220px;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .BookInfo {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .BookInfo h1 {
+        grid-column-end: 3;
+    }
+
+    .Author {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .Rating {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
 }

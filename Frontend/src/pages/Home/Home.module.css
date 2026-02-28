@@ -1,6 +1,6 @@
 .Home {
- position: relative;padding-top: 131px;
-
+  position: relative;
+  padding-top: 131px;
 }
 
 .banner {
@@ -20,14 +20,14 @@
     max-width: 1320px;
     background-color: #FFFFFF;
     margin: auto;
-    border-radius: 7px;
-    box-shadow:  0 4px 34px rgba(0, 0, 0, 0.07);;
-
+    border-radius: 12px;
+    box-shadow: 0 4px 34px rgba(26, 10, 60, 0.25);
+    overflow: hidden;
 }
 
 .Home header {
     text-align: center;
-    font-family: "Libre Baskerville", serif;
+    font-family: "Fredoka One", cursive;
     padding-top: 85px;
     display: flex;
     flex-direction: column;
@@ -35,21 +35,62 @@
 }
 
 .Home header h1 {
-    font-style: italic;
-    font-size: 44px;
-    color: #796157;
+    font-style: normal;
+    font-size: 48px;
+    color: #5B2D8E;
 }
 
 .Home header p {
-    font-style: italic;
-    font-size: 28px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
     padding-block: 10px;
+    color: #3D1F7A;
 }
-
 
 .bookList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-block: 140px;
+}
+
+@media all and (max-width: 768px) {
+    .Home header {
+        padding-top: 55px;
+    }
+
+    .Home header h1 {
+        font-size: 36px;
+    }
+
+    .Home header p {
+        font-size: 18px;
+    }
+
+    .bookList {
+        margin-block: 80px;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .Home {
+        padding-top: 80px;
+    }
+
+    .Home header {
+        padding-top: 40px;
+    }
+
+    .Home header h1 {
+        font-size: 28px;
+    }
+
+    .Home header p {
+        font-size: 16px;
+    }
+
+    .bookList {
+        margin-block: 50px;
+    }
 }

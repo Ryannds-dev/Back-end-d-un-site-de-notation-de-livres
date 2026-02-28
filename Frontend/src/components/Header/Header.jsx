@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 
 import * as PropTypes from 'prop-types';
 import styles from './Header.module.css';
-import Logo from '../../images/Logo.png';
+import Logo from '../../images/Logo_recook.webp';
 
 function Header({ user, setUser }) {
   const navigate = useNavigate();
@@ -16,7 +16,9 @@ function Header({ user, setUser }) {
   return (
     <header className={styles.Header}>
       <div className="container">
-        <img src={Logo} alt="logo mpm vieu grimoire" />
+        <Link to="/" className={styles.LogoLink}>
+          <img src={Logo} alt="My Star ReadIn" className={styles.Logo} />
+        </Link>
         <ul>
           <li><NavLink to="/" end className={({ isActive }) => (isActive ? styles.activeLink : undefined)}>Accueil</NavLink></li>
           <li><NavLink to="/Ajouter" className={({ isActive }) => (isActive ? styles.activeLink : undefined)}>Ajouter un livre</NavLink></li>

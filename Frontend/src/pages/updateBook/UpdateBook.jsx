@@ -6,7 +6,7 @@ import BackArrow from '../../components/BackArrow/BackArrow';
 import { getBook } from '../../lib/common';
 import { APP_ROUTES } from '../../utils/constants';
 import { useUser } from '../../lib/customHooks';
-import bookAdd from '../../images/book_add.jpg';
+import bookAdd from '../../images/book_add_recook.webp';
 
 function UpdateBook() {
   const [book, setBook] = useState(null);
@@ -45,7 +45,7 @@ function UpdateBook() {
           <div className={styles.Created}>
             <h1>Merci!</h1>
             <p>votre livre a bien été mis à jour</p>
-            <img src={bookAdd} alt="Livre mis à jour" />
+            <Link to="/"><img src={bookAdd} alt="Livre mis à jour" /></Link>
             <Link to="/" className="button">Retour à l&apos;accueil</Link>
           </div>
         )}

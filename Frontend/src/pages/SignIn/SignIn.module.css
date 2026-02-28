@@ -4,47 +4,58 @@
     align-items: center;
 }
 
+.SignInLogo {
+    height: 80px;
+    width: auto;
+    max-width: 90%;
+    margin-top: 40px;
+}
+
 .Notification {
     width: 40%;
     margin-top: 30px;
     box-sizing: border-box;
 }
 
-.Notification.Error p{
-    background-color: rgba(255,0,15,0.24);
+.Notification.Error p {
+    background-color: rgba(255, 0, 15, 0.18);
     border-color: #D70000;
 }
-.Notification p{
+.Notification p {
     box-sizing: border-box;
     width: 100%;
     padding: 20px 50px;
-    background-color: #F9F3EE;
-    border: solid 2px #D9A963;
+    background-color: #EDE0FF;
+    border: solid 2px #5B2D8E;
+    font-family: 'Nunito', sans-serif;
+    border-radius: 6px;
+    color: #1A0A3C;
 }
 .Form {
     display: flex;
     flex-direction: column;
 }
 
-.Form{
-    background-color: #F9F3EE;
+.Form {
+    background-color: #EDE0FF;
     width: 30%;
     margin: auto;
     padding: 50px;
     align-items: center;
     margin-block: 50px;
-
+    border-radius: 12px;
 }
 .Form, .Form label {
     display: flex;
     flex-direction: column;
-    font-family: "DM Sans", sans-serif;
+    font-family: "Nunito", sans-serif;
     font-size: 18px;
+    font-weight: 600;
     line-height: 24px;
-
+    color: #1A0A3C;
 }
 
-.Form input[type="file"]{
+.Form input[type="file"] {
     display: none;
 }
 
@@ -67,8 +78,18 @@
     display: flex;
     align-items: center;
     margin-bottom: 35px;
-
+    border: 2px solid #5B2D8E;
+    border-radius: 6px;
+    padding-inline: 12px;
+    font-family: 'Nunito', sans-serif;
+    background-color: #fff;
 }
+
+.Form input:focus {
+    outline: none;
+    border-color: #FFD700;
+}
+
 .Submit {
     display: flex;
     align-items: center;
@@ -76,6 +97,8 @@
 
 .Submit span {
     margin-inline: 20px;
+    font-family: 'Nunito', sans-serif;
+    color: #5B2D8E;
 }
 
 @media all and (max-width: 1300px) {
@@ -84,7 +107,32 @@
     }
 }
 
+@media all and (max-width: 900px) {
+    .SignInLogo {
+        height: 60px;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .Form {
+        width: 90%;
+        padding: 30px 24px;
+    }
+
+    .Notification {
+        width: 90%;
+    }
+
+    .Notification p {
+        padding: 16px 24px;
+    }
+}
+
 @media all and (max-width: 500px) {
+    .SignInLogo {
+        height: 45px;
+    }
+
     .Submit {
         flex-direction: column;
     }

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_ROUTES, APP_ROUTES } from '../../utils/constants';
 import { useUser } from '../../lib/customHooks';
 import { storeInLocalStorage } from '../../lib/common';
-import { ReactComponent as Logo } from '../../images/Logo.svg';
+import Logo from '../../images/Logo_recook.webp';
 import styles from './SignIn.module.css';
 
 function SignIn({ setUser }) {
@@ -73,7 +73,7 @@ function SignIn({ setUser }) {
   const errorClass = notification.error ? styles.Error : null;
   return (
     <div className={`${styles.SignIn} container`}>
-      <Logo />
+      <img src={Logo} alt="My Star ReadIn" className={styles.SignInLogo} />
       <div className={`${styles.Notification} ${errorClass}`}>
         {notification.message.length > 0 && <p>{notification.message}</p>}
       </div>

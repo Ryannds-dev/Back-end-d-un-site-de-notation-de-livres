@@ -1,27 +1,16 @@
 .Footer {
     margin-top: auto;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #1A0A3C;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: #2C1810
+    padding-block: 24px;
 }
 
-.MapBlock {
-    display: flex;
-    margin-block: 16px;
-    align-items: center;
-
-}
-.MapBlock a {
-    color: #796157;
-}
-.MapBlock img {
-    margin-right: 16px;
-}
-.MapLink {
-
+.Brand {
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    color: #FFD700;
+    letter-spacing: 1px;
 }

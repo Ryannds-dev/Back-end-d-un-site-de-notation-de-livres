@@ -1,6 +1,6 @@
-.Header{
-    font-family: 'Libre Baskerville', serif;
-    background-color: #FFFFFF;
+.Header {
+    font-family: 'Nunito', sans-serif;
+    background-color: #1A0A3C;
     min-height: 91px;
     display: flex;
     align-items: center;
@@ -13,10 +13,12 @@
 
 .Header p {
     font-size: 20px;
+    color: #FFFFFF;
 }
 
 .Header ul {
     display: flex;
+    align-items: center;
 }
 
 .Header ul li {
@@ -26,25 +28,87 @@
 
 .Header ul li a {
     text-decoration: none;
-    color: black ;
+    color: #EDE0FF;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.Header ul li a:hover {
+    color: #FFD700;
+}
+
+.LogoLink {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.Logo {
+    height: 60px;
+    width: auto;
+    transition: opacity 0.2s, transform 0.2s;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+}
+
+.LogoLink:hover .Logo {
+    opacity: 0.8;
+    transform: scale(1.05);
 }
 
 .Header a.activeLink {
-    font-weight: bold;
+    font-weight: 800;
+    color: #FFD700;
+}
+
+.Header ul li span {
+    color: #EDE0FF;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.Header ul li span:hover {
+    color: #FFD700;
+}
+
+@media all and (max-width: 900px) {
+    .Logo {
+        height: 45px;
+    }
+
+    .Header ul li {
+        padding-inline: 12px;
+    }
+
+    .Header ul li a,
+    .Header ul li span {
+        font-size: 13px;
+    }
 }
 
 @media all and (max-width: 600px) {
     .Header div {
         flex-direction: column;
         align-items: center;
+        padding-block: 16px;
     }
 
-    .Header img {
-        margin-top: 20px;
-        width: 50%;
+    .Logo {
+        height: 40px;
+        margin-top: 0;
+    }
+
+    .Header ul {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .Header ul li {
-        padding-block: 20px;
+        padding-block: 12px;
+        padding-inline: 10px;
     }
 }
