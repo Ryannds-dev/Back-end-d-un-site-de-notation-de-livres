@@ -20,7 +20,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://back-end-d-un-site-de-notation-de-livres-62rbx1fa7.vercel.app/",
+      "https://my-star-readin-site-de-notation-de-livres.vercel.app",
     ],
   }),
 );
