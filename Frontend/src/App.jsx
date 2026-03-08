@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter, Route, Routes,
 } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import SignIn from './pages/SignIn/SignIn';
 import Home from './pages/Home/Home';
 import Book from './pages/Book/Book';
@@ -33,6 +34,7 @@ function App() {
           <Route path={APP_ROUTES.ADD_BOOK} element={<AddBook />} />
         </Routes>
         <Footer />
+        <Analytics />
       </div>
     </BrowserRouter>
   );
